@@ -1,0 +1,64 @@
+
+    CREATE TABLE basketball_players (id INTEGER PRIMARY KEY,
+    fullname TEXT,
+    Won_Championship TEXT,
+    age integer);
+    
+INSERT INTO basketball_players (fullname, won_championship, age)
+    VALUES ("Lebron_james", "yes", 37);
+INSERT INTO basketball_players (fullname, won_championship, age)
+    VALUES ("Kevin Durant", "yes", 32);
+INSERT INTO basketball_players (fullname, won_championship, age)
+    VALUES ("Dwane_wade", "yes", 39);
+INSERT INTO basketball_players (fullname, won_championship, age)
+    VALUES ("steph_curry", "yes", 30);
+INSERT INTO basketball_players (fullname, won_championship, age)
+    VALUES ("Kobe_bryant", "yes", 45);
+INSERT INTO basketball_players (fullname, won_championship, age)
+    VALUES ("Chris_paul", "no", 37);
+    
+CREATE TABLE basketball_teams (id INTEGER PRIMARY KEY,
+    player_id INTEGER,
+    team_name TEXT);
+    
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (1, "Lakers");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (1, "Heat");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (1, "Cavs");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (2, "Thunder");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (2, "Warriors");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (2, "Nets");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (3, "Heat");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (3, "Cavs");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (3, "Bulls");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (4, "Warriors");    
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (5, "Lakers");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (6, "Pelicans");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (3, "Clippers");
+INSERT into basketball_teams (player_id, team_name)
+    VALUES (3, "Suns");
+    
+SELECT basketball_players.fullname, basketball_teams.team_name
+FROM basketball_players
+JOIN basketball_teams
+ON basketball_players.id = basketball_teams.player_id
+
+
+    
+    
+    
+    
+
+    
