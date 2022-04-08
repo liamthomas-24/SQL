@@ -1,0 +1,43 @@
+CREATE TABLE game_users (
+    id INTEGER PRIMARY KEY,
+    name TEXT);
+    
+CREATE TABLE game_data (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER,
+    score INTEGER,
+    Car TEXT);
+    
+INSERT INTO game_users (name) VALUES ("John");
+INSERT INTO game_users (name) VALUES ("Steve");
+INSERT INTO game_users (name) VALUES ("Jess");
+INSERT INTO game_users (name) VALUES ("Hal");
+INSERT INTO game_users (name) VALUES ("Holly");
+
+INSERT INTO game_data (user_id, score, car) VALUES (1, 75, "Honda");
+INSERT INTO game_data (user_id, score, car) VALUES (2, 55, "Ford");
+INSERT INTO game_data (user_id, score, car) VALUES (3, 87, "Ram");
+INSERT INTO game_data (user_id, score, car) VALUES (4, 44, "Lincoln");
+INSERT INTO game_data (user_id, score, car) VALUES (5, 99, "Ferrari");
+
+--joining the two tables together--
+SELECT * FROM game_data
+JOIN game_users
+WHERE game_users.id = game_data.user_id;
+
+--inserting addition data--
+UPDATE game_data SET Car = "RAM Truck"
+WHERE game_data.id = 3;
+
+--updated query showing newly entered data--
+SELECT * FROM game_data
+JOIN game_users
+WHERE game_users.id = game_data.user_id;
+
+--Deleting lincoln's data--
+DELETE FROM game_users WHERE id = 4;
+
+--updated query--
+SELECT * FROM game_data
+JOIN game_users
+WHERE game_users.id = game_data.user_id;
